@@ -1,11 +1,18 @@
 import 'package:ca_201/lesson_five.dart';
 import 'package:ca_201/lesson_four.dart';
+import 'package:ca_201/screen_one.dart';
+import 'package:ca_201/screen_two.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
-      home: LessonFive(),
+     MaterialApp(
+      home: const ScreenOne(),
+
+      routes: {
+        "screenOne":(context)=>const ScreenOne(),
+        "screenTwo":(context)=>const ScreenTwo()
+      },
     ),
   );
 }
