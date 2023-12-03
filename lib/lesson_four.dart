@@ -1,8 +1,16 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class LessonFour extends StatelessWidget {
+class LessonFour extends StatefulWidget {
   const LessonFour({super.key});
 
+  @override
+  State<LessonFour> createState() => _LessonFourState();
+}
+
+class _LessonFourState extends State<LessonFour> {
+  int level = 7;
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,12 +49,11 @@ class LessonFour extends StatelessWidget {
       // ),
 
       body: Padding(
-        padding: const EdgeInsets.only(
-          left: 20
-        ),
+        padding: const EdgeInsets.only(left: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+          
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -164,13 +171,39 @@ class LessonFour extends StatelessWidget {
                   width: 10,
                 ),
                 Text(
-                  "56".toUpperCase(),
-                  style: const TextStyle(color: Colors.white, fontSize: 20),
+                  "$level".toUpperCase(),
+                  style: const TextStyle(color: Colors.white, fontSize: 45),
                 ),
               ],
             )
           ],
         ),
+      ),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            backgroundColor: Colors.green,
+            onPressed: () {
+              level++;
+              setState(() {});
+            },
+            child: const Icon(Icons.add),
+          ),
+          const SizedBox(
+            width: 10,
+          ),
+          FloatingActionButton(
+            backgroundColor: Colors.red,
+            onPressed: () {
+              if (level > 0) {
+                level--;
+                setState(() {});
+              }
+            },
+            child: const Icon(CupertinoIcons.minus),
+          ),
+        ],
       ),
     );
   }

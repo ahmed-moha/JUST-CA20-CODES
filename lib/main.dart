@@ -1,12 +1,19 @@
 
-import 'package:ca_208/lesson_four.dart';
+import 'package:ca_208/lesson_ten.dart';
+import 'package:ca_208/screen_one.dart';
+import 'package:ca_208/screen_two.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  
   runApp(
-    const MaterialApp(
+     MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LessonFour(),
+      home: const LessonTen(),
+      routes: {
+        "screenOne":(context)=>const ScreenOne(),
+        "screenTwo":(context) => const ScreenTwo()
+      },
     ),
   );
 }
@@ -105,6 +112,8 @@ class Home extends StatelessWidget {
       //     ),
       //   ),
       // ),
+
+     
     );
   }
 }
