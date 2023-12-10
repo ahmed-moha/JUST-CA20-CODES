@@ -130,11 +130,15 @@ class _LessonTenState extends State<LessonTen> {
                             children: [
                               const SizedBox(height: 40),
                               Container(
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle
+                                ), 
                                 margin:
                                     const EdgeInsets.symmetric(horizontal: 16),
                                 child: const TextField(
                                   decoration: InputDecoration(
                                       hintText: "Name",
+                                      
                                       border: OutlineInputBorder()),
                                 ),
                               ),
